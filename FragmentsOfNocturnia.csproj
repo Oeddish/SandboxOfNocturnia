@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<!-- Import tModLoader mod properties -->
+	<Import Project="..\tModLoader.targets" />
+
+	<!-- General -->
+	<PropertyGroup>
+		
+	</PropertyGroup>
+
+	<!-- References -->
+	<ItemGroup>
+	  <EditorConfigFiles Remove="C:\Users\Uzivatel\Documents\My Games\Terraria\tModLoader\ModSources\FragmentsOfNocturnia\.editorconfig" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Content\Items\Items\BatEssence.png" />
+	  <None Remove="Content\Items\Items\NightmareSteelBar.png" />
+	  <None Remove="Content\Items\Items\NocturniumBar.png" />
+	  <None Remove="Content\Items\NocturneKnocker.png" />
+	  <None Remove="Content\Items\NocturneKnockerProjectile.png" />
+	  <None Remove="Content\Items\Placeable\Furniture\NightmareSteelThrone.png" />
+	  <None Remove="Content\Items\Weapons\BatBasher.png" />
+	  <None Remove="Content\Items\Weapons\Bratarang.png" />
+	  <None Remove="Content\Items\Weapons\NocturneKnocker.png" />
+	  <None Remove="Content\Projectiles\BatBasherProjectile.png" />
+	  <None Remove="Content\Projectiles\BratarangHitProjectile.png" />
+	  <None Remove="Content\Projectiles\BratarangProjectile.png" />
+	  <None Remove="Content\Projectiles\NocturneKnockerBat.png" />
+	  <None Remove="Content\Projectiles\NocturneKnockerProjectile.png" />
+	  <None Remove="Content\Tiles\Furniture\NightmareSteelThroneTile.png" />
+	  <None Remove="Content\Tiles\Furniture\NightmareSteelThroneTile_Highlight.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="C:\Users\Uzivatel\Documents\My Games\Terraria\tModLoader\ModSources\FragmentsOfNocturnia\.editorconfig" />
+	</ItemGroup>
+
+</Project>

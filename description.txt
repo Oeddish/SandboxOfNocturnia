@@ -1,0 +1,25 @@
+v0.2.6
+
+A fan-made, fun little mod created based of off the VTuber KokoKurumi.
+
+It adds a bunch of weapons and materials. 
+
+Please use recepie browser so that you don't get lost.
+
+Actively in development.
+
+
+Last update: Added earlygame weapons and progression. Price balanced.
+
+
+
+Credits -
+Kraken_21 - Main programing
+Herratic - Main spritework
+
+Sokido - spritework
+CreamyAyo - spritework
+
+Contributors:
+INeedSubtitles - programing
+Mullet - concept art (and a bit of spritework)

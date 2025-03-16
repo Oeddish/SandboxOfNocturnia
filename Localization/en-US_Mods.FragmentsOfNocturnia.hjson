@@ -1,0 +1,333 @@
+# This file will automatically update with entries for new content after a build and reload.
+
+Items: {
+	NocturneKnocker: {
+		DisplayName: Nocturne Knocker
+		Tooltip: "'These bat's protect it's the charged core. Sometimes they fly off when it hits something'"
+	}
+
+	NightmareSteelBar: {
+		Tooltip: "'Is there a dent in this one? What a horror!'"
+		DisplayName: Nightmare Steel
+	}
+
+	BatBasher: {
+		DisplayName: Bat Basher
+		Tooltip: "'A heavy mace that crushes enemies under the weight of eternal night'"
+	}
+
+	BatEssence: {
+		DisplayName: Soul of Echo
+		Tooltip: "'You feel a small amout of essence from a land far gone'"
+	}
+
+	Bratarang: {
+		DisplayName: Bratarang
+		Tooltip: "'It's frozen by the fear of being thrown'"
+	}
+
+	NocturniumBar: {
+		DisplayName: Nocturnium Bar
+		Tooltip: "'To recreate a royals metal is a feat for sure'"
+	}
+
+	PottedFlower: {
+		DisplayName: Potted Flower
+		Tooltip: "'With her flower safe there is no need for violence'"
+	}
+
+	NightmareSteelThrone: {
+		DisplayName: Nightmare Steel Throne
+		Tooltip: ""
+	}
+
+	AbyssalResonator: {
+		DisplayName: Abyssal Resonator
+		Tooltip: "'Crystalizes and breaks echo' - for now uses gel as ammo, srry."
+	}
+
+	StaffOfTheGlutton: {
+		DisplayName: Gluttonous Staff
+		Tooltip: "'Devours it's foes'"
+	}
+
+	SokidosRavenclaw: {
+		DisplayName: Sokidos Ravenclaw
+		Tooltip:
+			'''
+			'Thank you Sokido for the great artwork!' 
+			 Press right-click for Sonkiddo to attack
+			'''
+	}
+
+	NightmareSteelHamaxe: {
+		DisplayName: Nightmare Steel Hamaxe
+		Tooltip: ""
+	}
+
+	NightmareSteelPickaxe: {
+		DisplayName: Nightmare Steel Pickaxe
+		Tooltip: ""
+	}
+
+	NocturneDrill: {
+		DisplayName: Nocturne Drill
+		Tooltip: ""
+	}
+
+	NocturneHamaxe: {
+		DisplayName: Nocturne Hamaxe
+		Tooltip: ""
+	}
+
+	NocturnePickaxe: {
+		DisplayName: Nocturne Pickaxe
+		Tooltip: ""
+	}
+
+	NocturniumThrone: {
+		DisplayName: Nocturnium Throne
+		Tooltip: "'Second to none? Second to the only one'"
+	}
+
+	BloodVial: {
+		DisplayName: Blood Vial
+		Tooltip: ""
+	}
+
+	DragonBone: {
+		DisplayName: Dragon Bone
+		Tooltip: ""
+	}
+
+	RavenFeather: {
+		DisplayName: Raven Feather
+		Tooltip: ""
+	}
+
+	CrescentBand: {
+		Tooltip: Makes you unable to regen mana but explosively heals you
+		DisplayName: Crescent Band
+	}
+
+	DrainingBand: {
+		DisplayName: Draining Band
+		Tooltip: "'Would you press the button?: You get more life regen but you get magic arrhythmia'"
+	}
+
+	StrangeConjunction: {
+		DisplayName: Strange Conjunction
+		Tooltip: Advised not to drink
+	}
+
+	NocturneYoyo: {
+		DisplayName: Nocturne Yoyo
+		Tooltip: ""
+	}
+
+	KokoSlime: {
+		DisplayName: Slimy Cupon
+		Tooltip: Redeem your points for this glorious thing
+	}
+
+	Dermatidae: {
+		DisplayName: Dermatidae
+		Tooltip:
+			'''
+			5 summon tag damage 
+			Your summons will focus struck enemies
+			Applies the 'broken armor' debuff
+			'''
+	}
+
+	StrangeConcoction: {
+		DisplayName: Strange Concoction
+		Tooltip: ""
+	}
+
+	HolyCatalyst: {
+		DisplayName: Holy Catalyst
+		Tooltip: ""
+	}
+
+	RottingCatalyst: {
+		DisplayName: Rotting Catalyst
+		Tooltip: ""
+	}
+
+	ViolentCatalyst: {
+		DisplayName: Violent Catalyst
+		Tooltip: ""
+	}
+
+	HeavyRing: {
+		DisplayName: Heavy Ring
+		Tooltip: ""
+	}
+
+	Vechtor: {
+		DisplayName: Vechtor
+		Tooltip: Right-click to dash over enemies
+	}
+
+	CorruptScimitar: {
+		DisplayName: Corrupt Scimitar
+		Tooltip:
+			'''
+			5 defense when wielded
+			'Fun fact: the proper name is saber but it doesn't sound as cool'
+			'''
+	}
+
+	CrimsonZweihander: {
+		DisplayName: Crimson Zweihander
+		Tooltip:
+			'''
+			5 defense when wielded
+			'Fun fact: These were historically stabbing weapons but it doesn’t look as cool'
+			'''
+	}
+
+	FishWhip: {
+		DisplayName: Fishing Whip
+		Tooltip:
+			'''
+			3 summon tag damage 
+			Your summons will focus struck enemies
+			'''
+	}
+
+	FieryBoneStaff: {
+		DisplayName: Fiery Bone Staff
+		Tooltip: ""
+	}
+
+	TalonBow: {
+		DisplayName: Talon Bow
+		Tooltip:
+			'''
+			Shoots raven arrows
+			'Miss with this bow nevermore'
+			'''
+	}
+
+	FeatherFall: {
+		DisplayName: Feather Fall
+		Tooltip: "'Awaken the unkindness'"
+	}
+
+	NightfallCloak: {
+		DisplayName: Nightfall Cloak
+		Tooltip:
+			'''
+			Decreases enemy aggro and spawn rate at night 
+			'Hide yourself under the cloak of night'
+			'''
+	}
+
+	UmbralThread: {
+		DisplayName: Umbral Thread
+		Tooltip: "'Thread that’s been woven under moonlight'"
+	}
+
+	NocturneBerry: {
+		DisplayName: Nocturne Berry
+		Tooltip:
+			'''
+			Bats become friendly
+			Expert
+			'''
+	}
+
+	FossilisedRose: {
+		DisplayName: Fossilised Rose
+		Tooltip: ""
+	}
+
+	BiomeSpecs: {
+		DisplayName: Biome Specs
+		Tooltip: Reveals infected blocks while worn
+	}
+
+	Impurity: {
+		DisplayName: Impurity
+		Tooltip: Allows the wielder to use echolocation
+	}
+
+	Murmur: {
+		DisplayName: Murmur
+		Tooltip: Allows the wielder to use echolocation
+	}
+
+	StaffOfCruelty: {
+		DisplayName: Staff Of Cruelty
+		Tooltip: May inflict a random debuff on hit
+	}
+
+	StaffOfFoulness: {
+		DisplayName: Staff Of Foulness
+		Tooltip: May inflict a random debuff on hit
+	}
+
+	DreadfulNecklace: {
+		DisplayName: Dreadful Necklace
+		Tooltip:
+			'''
+			Increases your max number of minions by 1
+			8% increased summon damage
+			'''
+	}
+}
+
+Projectiles: {
+	NocturneKnockerProjectile.DisplayName: Nocturne Knocker Projectile
+	NocturneKnockerBat.DisplayName: Nocturne Knocker Bat
+	BatBasherProjectile.DisplayName: Bat Basher Projectile
+	BratarangHitProjectile.DisplayName: Bratarang Hit Projectile
+	BratarangProjectile.DisplayName: Bratarang Projectile
+	PottedCompanionProjectile.DisplayName: Potted Companion Projectile
+	TestChain.DisplayName: Test Chain
+	AbyssalResonatorScope.DisplayName: Abyssal Resonator Scope
+	AbyssalResonatorWave.DisplayName: Abyssal Resonator Wave
+	SokidoHeadProjectile.DisplayName: Sokido Head Projectile
+	SokidoBiteProjectile.DisplayName: Sokido Bite Projectile
+	StaffOfTheGluttonBiteProjectile.DisplayName: Staff Of The Glutton Bite Projectile
+	StaffOfTheGluttonHeadProjectile.DisplayName: Staff Of The Glutton Head Projectile
+	SokidosRavenclawProjectile.DisplayName: Sokidos Ravenclaw Projectile
+	SokidosRavenclawBladeProjectile.DisplayName: Sokidos Ravenclaw Blade Projectile
+	SokidoRavenProjectile.DisplayName: Sokido Raven Projectile
+	Raven.DisplayName: Raven
+	NocturneDrillProjectile.DisplayName: Nocturne Drill Projectile
+	NocturniumYoyoProjectile.DisplayName: Nocturnium Yoyo Projectile
+	NocturneYoyoProjectile.DisplayName: Nocturne Yoyo Projectile
+	KokoSlimeProj.DisplayName: Koko Slime Proj
+	DermatidaeProjectile.DisplayName: Dermatidae Projectile
+	VechtorProjectile.DisplayName: Vechtor Projectile
+	FishWhipProjectile.DisplayName: Fish Whip Projectile
+	RavenArrow.DisplayName: Raven Arrow
+	FeatherFallProjectile.DisplayName: Feather Fall Projectile
+	FeatherFallProjectileCopy.DisplayName: Feather Fall Projectile Copy
+	PinkEchoBoltProjectile.DisplayName: Pink Echo Bolt Projectile
+}
+
+Buffs: {
+	PottedCompanion: {
+		DisplayName: Potted Companion
+		Description: A frendship with deep roots
+	}
+
+	CrescentCharging: {
+		DisplayName: Crescent Charging
+		Description: The stone is taking your mana to charge another blast
+	}
+
+	CrescentRegeneration: {
+		DisplayName: Crescent Regeneration
+		Description: "'Invincible!'"
+	}
+
+	KokoSlimeBuff: {
+		DisplayName: Koko Slime Buff
+		Description: "'Blob flop glop'"
+	}
+}
