@@ -277,6 +277,34 @@ Items: {
 			8% increased summon damage
 			'''
 	}
+
+	Diaemus: {
+		DisplayName: Diaemus
+		Tooltip: Shoots a beating blood-orb that explodes upon impact.
+	}
+
+	Indomitable: {
+		DisplayName: Indomitable
+		Tooltip:
+			'''
+			6 defense
+			Grants imunity to knockback and fire blocks
+			Grants imunity to most debuffs
+			Allows the player to dash into the enemy
+			Double tap a direction
+			Expert
+			'''
+	}
+
+	Diphylla: {
+		DisplayName: Diphylla
+		Tooltip: "'Rain blood onto your enemies and leach off of them.'"
+	}
+
+	Desmodus: {
+		DisplayName: Desmodus
+		Tooltip: "'Siphons the blood of your foes'"
+	}
 }
 
 Projectiles: {
@@ -308,6 +336,9 @@ Projectiles: {
 	FeatherFallProjectile.DisplayName: Feather Fall Projectile
 	FeatherFallProjectileCopy.DisplayName: Feather Fall Projectile Copy
 	PinkEchoBoltProjectile.DisplayName: Pink Echo Bolt Projectile
+	DiaemusProjectile.DisplayName: Diaemus Projectile
+	DiaemusSpikeProjectile.DisplayName: Diaemus Spike Projectile
+	DiphyllaProjectile.DisplayName: Diphylla Projectile
 }
 
 Buffs: {

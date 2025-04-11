@@ -18,7 +18,7 @@ namespace FragmentsOfNocturnia.Content.Items.Weapons.Summoner.Whips
             // This method quickly sets the whip's properties.
             // Mouse over to see its parameters.
             Item.DefaultToWhip(ModContent.ProjectileType<DermatidaeProjectile>(), 50, 2, 4);
-            Item.rare = ItemRarityID.Red;
+            Item.rare = ItemRarityID.Yellow;
             Item.value = Item.sellPrice(gold: 11);
         }
 

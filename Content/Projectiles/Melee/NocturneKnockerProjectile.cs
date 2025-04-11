@@ -64,8 +64,8 @@ namespace FragmentsOfNocturnia.Content.Projectiles.Melee
                     velocity,
                     ModContent.ProjectileType<NocturneKnockerBat>(),
                     batDamage,
-                    beeKnockback,
-                    Main.myPlayer);
+                    beeKnockback, // Bee was used as the template and I never changed it
+                    Main.myPlayer); 
 
             }
             // Creates a flurry of particles

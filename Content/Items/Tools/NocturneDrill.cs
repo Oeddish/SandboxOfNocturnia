@@ -45,7 +45,7 @@ namespace FragmentsOfNocturnia.Content.Items.Tools
             // tileBoost changes the range of tiles that the item can reach.
             Item.tileBoost = 1;
 
-            Item.pick = 215; // How strong the drill is, see https://terraria.wiki.gg/wiki/Pickaxe_power for a list of common values
+            Item.pick = 205; // How strong the drill is, see https://terraria.wiki.gg/wiki/Pickaxe_power for a list of common values
         }
 
         public override void AddRecipes()

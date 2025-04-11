@@ -12,7 +12,7 @@ namespace FragmentsOfNocturnia
 	// Please read https://github.com/tModLoader/tModLoader/wiki/Basic-tModLoader-Modding-Guide#mod-skeleton-contents for more information about the various files in a mod.
 	public class FragmentsOfNocturnia : Mod
 	{
-        public override void AddRecipes()
+        public override void AddRecipes()/* tModPorter Note: Removed. Use ModSystem.AddRecipes */
         {
             Recipe recipeObsRose = Recipe.Create(ItemID.ObsidianRose);
             recipeObsRose.AddIngredient(ItemID.Obsidian, 10);

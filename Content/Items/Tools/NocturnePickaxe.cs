@@ -29,7 +29,7 @@ namespace FragmentsOfNocturnia.Content.Items.Tools
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
 
-            Item.pick = 210; // https://terraria.wiki.gg/wiki/Pickaxe_power
+            Item.pick = 205; // https://terraria.wiki.gg/wiki/Pickaxe_power
             Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Melee speed affects how fast the tool swings for damage purposes, but not how fast it can dig
             Item.tileBoost = 5;
         }
