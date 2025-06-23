@@ -26,7 +26,7 @@ namespace FragmentsOfNocturnia.Content.Items.Accessories
             Item.rare = ItemRarityID.Blue;
             Item.noMelee = true;
 
-            Item.value = Item.sellPrice(0, 1);  //This should be adjusted based on progression and strength
+            Item.value = Item.sellPrice(0, 0, 50, 20);
 
             Item.buffType = ModContent.BuffType<PottedCompanion>();
             Item.vanity = true;

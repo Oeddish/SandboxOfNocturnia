@@ -305,6 +305,72 @@ Items: {
 		DisplayName: Desmodus
 		Tooltip: "'Siphons the blood of your foes'"
 	}
+
+	CursedPearl: {
+		DisplayName: Cursed Pearl
+		Tooltip:
+			'''
+			5% increased magic critical strike chance
+			'Souls of the damned reside in this pearl'
+			'''
+	}
+
+	HolyScripture: {
+		DisplayName: Holy Scripture
+		Tooltip:
+			'''
+			20% increased magic damage
+			'Holy power flows through you'
+			'''
+	}
+
+	ReverberationStone: {
+		DisplayName: Reverberation Stone
+		Tooltip:
+			'''
+			5% increased magic damage
+			Magic weapons apply the reverberation debuff
+			'''
+	}
+
+	EyeOfNewt: {
+		DisplayName: Eye Of Newt
+		Tooltip:
+			'''
+			10% increased magic critical strike chance
+			'Kill all who meet your glare'
+			'''
+	}
+
+	Necronomicon: {
+		DisplayName: Necronomicon
+		Tooltip:
+			'''
+			22% increased magic damage
+			12% increased magic critical strike chance
+			Magic weapons apply the reverberation debuff
+			Magic weapons apply the wraithed debuff
+			'''
+	}
+
+	TomeOfMalice: {
+		DisplayName: Tome Of Malice
+		Tooltip:
+			'''
+			25% increased magic damage
+			5% increased magic critical strike chance
+			Magic weapons apply the reverberation debuff
+			'''
+	}
+
+	TomeOfProvidence: {
+		DisplayName: Tome Of Providence
+		Tooltip:
+			'''
+			25% increased magic damage
+			Magic weapons apply the reverberation debuff
+			'''
+	}
 }
 
 Projectiles: {
@@ -339,6 +405,7 @@ Projectiles: {
 	DiaemusProjectile.DisplayName: Diaemus Projectile
 	DiaemusSpikeProjectile.DisplayName: Diaemus Spike Projectile
 	DiphyllaProjectile.DisplayName: Diphylla Projectile
+	WraithedProjectile.DisplayName: Wraithed Projectile
 }
 
 Buffs: {
@@ -360,5 +427,15 @@ Buffs: {
 	KokoSlimeBuff: {
 		DisplayName: Koko Slime Buff
 		Description: "'Blob flop glop'"
+	}
+
+	Reverberation: {
+		DisplayName: Reverberation
+		Description: Mods.FragmentsOfNocturnia.Buffs.Reverberation.Description
+	}
+
+	Wraithed: {
+		DisplayName: Wraithed
+		Description: Mods.FragmentsOfNocturnia.Buffs.Wraithed.Description
 	}
 }

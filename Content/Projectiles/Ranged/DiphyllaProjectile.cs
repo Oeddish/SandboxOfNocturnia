@@ -63,5 +63,21 @@ namespace FragmentsOfNocturnia.Content.Projectiles.Ranged
             player.Heal(damageDone / 50);
             base.OnHitNPC(target, hit, damageDone);
         }
+
+        public override void OnKill(int timeLeft)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                Dust.NewDust(
+                    Projectile.position + new Vector2(Projectile.width, Projectile.height) / 2,
+                    1, 1,
+                    DustID.Blood,
+                    Main.rand.NextFloat(-5, 5), Main.rand.NextFloat(-5, 5),
+                    0,
+                    Color.Red,
+                    1f);
+            }
+            base.OnKill(timeLeft);
+        }
     }
 }
