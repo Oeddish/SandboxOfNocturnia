@@ -1,39 +1,78 @@
-using Microsoft.Xna.Framework;
+using FragmentsOfNocturnia.Content.Buffs.Consumables;
+using FragmentsOfNocturnia.Content.Items.Weapons.Ranged;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace FragmentsOfNocturnia.Content;
-//ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.Excalibur, settings, this.owner);
+namespace FragmentsOfNocturnia.Content.Players;
+
 public class KokoModPlayer : ModPlayer
 {
 	public bool slimePet;
+	public bool Cartridge_Buff;
+	public bool Absorption_Buff;
+	public int kikiPairID = 1;
 
-	//EVERYTHING BELOW THIS IS NOT RELATED TO THE SLIME
+	public int gunCritBonus = 0;
 
-	public Projectile tracer = null; //Tracer round used in Subtitles's gun alt fire
-	public NPC tracerTarget = null;
+	public int getNextKikiID()
+	{
+		return kikiPairID++;
+	}
 
-	public void setTracer(Projectile proj){
-		//I only want 1 tracer allowed per player so the tracking bullets dont get confused
-		if(tracer != null){
-			tracer.Kill();
+	public override void Initialize()
+	{
+		kikiPairID = 1;
+	}
+
+	public override void OnEnterWorld()
+	{
+		kikiPairID = 1;
+	}
+
+	public override void ResetEffects()
+	{
+		Cartridge_Buff = false;
+		Absorption_Buff = false;
+		gunCritBonus = 0;
+	}
+
+	public override void PostUpdateBuffs()
+	{
+		if (Player.HasBuff(ModContent.BuffType<Cartridge_Potion_Buff>()))
+		{
+			Cartridge_Buff = true;
+			if (Player.HasBuff(BuffID.AmmoReservation))
+			{
+				Player.ClearBuff(BuffID.AmmoReservation);
+			}
 		}
-		tracer = proj;
-	}
 
-	public Projectile getTracer(){
-		return this.tracer;
-	}
-
-	public void resetTracer(){
-		this.tracer = null;
-	}
-
-	public NPC getTracerTarget(){
-		if(tracer == null){
-			return null;
+		if (Player.HasBuff(ModContent.BuffType<Absorption_Potion_Buff>()))
+		{
+			Absorption_Buff = true;
+			if (Player.HasBuff(BuffID.Heartreach))
+			{
+				Player.ClearBuff(BuffID.Heartreach);
+			}
 		}
-		return tracerTarget;
 	}
+
+	public override bool CanConsumeAmmo(Item weapon, Item ammo)
+	{
+		if (Cartridge_Buff && Main.rand.NextFloat() < 0.30f) //30% chance to not consume ammo
+		{
+			return false;
+		}
+		return true;
+	}
+	
+	public override void ModifyWeaponCrit(Item item, ref float crit)
+    {
+        if (item.DamageType == DamageClass.Ranged && (item.useAmmo == AmmoID.Bullet || item.useAmmo == AmmoID.CandyCorn || item.useAmmo == AmmoID.Coin ))
+        {
+            crit += gunCritBonus;
+        }
+    }
 
 }

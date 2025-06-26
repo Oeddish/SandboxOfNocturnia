@@ -371,6 +371,56 @@ Items: {
 			Magic weapons apply the reverberation debuff
 			'''
 	}
+
+	MoonBat: {
+		Tooltip: ""
+		DisplayName: Moon Bat
+	}
+
+	MetalBat: {
+		Tooltip: "'A bat that seems vaguely familiar'"
+		DisplayName: Employee Bat
+	}
+
+	Cartridge_Potion: {
+		DisplayName: Cartridge Potion
+		Tooltip: 30% chance to not consume ammo
+	}
+
+	Bottled_Shimmer: {
+		Tooltip: Turns you insubstantial
+		DisplayName: Bottled Shimmer
+	}
+
+	Absorption_Potion: {
+		DisplayName: Absorption Potion
+		Tooltip: Vastly increases the pickup range for hearts
+	}
+
+	KikiSummonItem: {
+		DisplayName: Emergency Remote
+		Tooltip: "'Summons twin AI's to fight, one shoots a lazer and the other a bomb'"
+	}
+
+	RoyalFlush: {
+		DisplayName: Royal Flush
+		Tooltip: Increases critical chance for guns by 10%
+	}
+
+	DaiyaRevolver: {
+		DisplayName: Dead Man's Hand
+		Tooltip: ""
+	}
+
+	DaiyaTommy: {
+		DisplayName: Clean Sweep
+		Tooltip:
+			'''
+			Uses coins for ammo.
+			Higher valued coins do more damage
+			Literally pay to win
+			'''
+	}
 }
 
 Projectiles: {
@@ -437,5 +487,20 @@ Buffs: {
 	Wraithed: {
 		DisplayName: Wraithed
 		Description: Mods.FragmentsOfNocturnia.Buffs.Wraithed.Description
+	}
+
+	Cartridge_Potion_Buff: {
+		DisplayName: Cartridge Potion
+		Description: Grants a 30% chance to not consume ammo
+	}
+
+	Absorption_Potion_Buff: {
+		DisplayName: Absorption Potion
+		Description: Increases the pickup range for hearts
+	}
+
+	KikiSummonBuff: {
+		DisplayName: Kiki Bots
+		Description: Summons twin bots to shoot at your foes
 	}
 }

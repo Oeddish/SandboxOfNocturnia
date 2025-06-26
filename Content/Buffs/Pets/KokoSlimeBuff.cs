@@ -1,3 +1,4 @@
+using FragmentsOfNocturnia.Content.Players;
 using FragmentsOfNocturnia.Content.Projectiles.Buffs;
 using Terraria;
 using Terraria.ID;
