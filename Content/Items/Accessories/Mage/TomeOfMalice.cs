@@ -27,6 +27,21 @@ namespace FragmentsOfNocturnia.Content.Items.Accessories.Mage
             player.GetDamage<MagicDamageClass>() += 0.25f;
             player.GetCritChance<MagicDamageClass>() += 0.05f;
         }
+        public override bool CanEquipAccessory(Player player, int slot, bool modded)
+        {
+            if (slot < 10)
+            {
+                int maxAccessoryIndex = 5 + player.extraAccessorySlots;
+                for (int i = 3; i < 3 + maxAccessoryIndex; i++)
+                {
+                    if (slot != i && player.armor[i].type == ModContent.ItemType<HolyScripture>() || slot != i && player.armor[i].type == ModContent.ItemType<ReverberationStone>() || slot != i && player.armor[i].type == ModContent.ItemType<TomeOfProvidence>() || slot != i && player.armor[i].type == ModContent.ItemType<CursedPearl>() || slot != i && player.armor[i].type == ModContent.ItemType<Necronomicon>())
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();

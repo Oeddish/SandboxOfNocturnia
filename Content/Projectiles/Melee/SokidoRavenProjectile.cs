@@ -58,6 +58,10 @@ namespace FragmentsOfNocturnia.Content.Projectiles.Melee
             state = 0;
             ravenCooldown = 400;
         }
+        public override bool? CanCutTiles()
+        {
+            return false;
+        }
 
         public override void AI()
         {

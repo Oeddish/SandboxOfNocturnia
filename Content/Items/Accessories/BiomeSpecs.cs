@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
+using FragmentsOfNocturnia.Content.Items.Items;
 
 namespace FragmentsOfNocturnia.Content.Items.Accessories
 {
@@ -23,6 +24,15 @@ namespace FragmentsOfNocturnia.Content.Items.Accessories
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.AddBuff(BuffID.BiomeSight, 5, true);
+        }
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.Goggles, 1);
+            recipe.AddIngredient(ItemID.BiomeSightPotion, 10);
+            recipe.AddTile(TileID.Tables);
+            recipe.AddTile(TileID.Chairs);
+            recipe.Register();
         }
     }
 }

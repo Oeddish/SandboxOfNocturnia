@@ -47,7 +47,7 @@ namespace FragmentsOfNocturnia.Content.Projectiles.Buffs
             Projectile.friendly = false;
             Projectile.ignoreWater = false;
             Projectile.tileCollide = false;
-            Projectile.damage = 50;
+            Projectile.damage = 200;
 
             Projectile.alpha = 255;
         }

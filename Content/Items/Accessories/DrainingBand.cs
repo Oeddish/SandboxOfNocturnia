@@ -46,6 +46,21 @@ namespace FragmentsOfNocturnia.Content.Items.Accessories
             beforeRegened = player.statMana;
             player.lifeRegen += 3;
         }
+        public override bool CanEquipAccessory(Player player, int slot, bool modded)
+        {
+            if (slot < 10)
+            {
+                int maxAccessoryIndex = 5 + player.extraAccessorySlots;
+                for (int i = 3; i < 3 + maxAccessoryIndex; i++)
+                {
+                    if (slot != i && player.armor[i].type == ItemID.ManaRegenerationBand || slot != i && player.armor[i].type == ItemID.BandofRegeneration || slot != i && player.armor[i].type == ModContent.ItemType<CrescentBand>())
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
@@ -54,5 +69,47 @@ namespace FragmentsOfNocturnia.Content.Items.Accessories
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.Register();
         }
+        /*public class ManaRegenerationBand : GlobalItem
+        {
+            public override bool CanEquipAccessory(Item item, Player player, int slot, bool modded)
+            {
+                if (item.type == ItemID.AnkhShield)
+                {
+                    if (slot < 10)
+                    {
+                        int maxAccessoryIndex = 5 + player.extraAccessorySlots;
+                        for (int i = 3; i < 3 + maxAccessoryIndex; i++)
+                        {
+                            if (slot != i && player.armor[i].type == ModContent.ItemType<CrescentBand>())
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                }
+                return true;
+            }
+        }
+        public class BandOfRegeneration : GlobalItem
+        {
+            public override bool CanEquipAccessory(Item item, Player player, int slot, bool modded)
+            {
+                if (item.type == ItemID.AnkhShield)
+                {
+                    if (slot < 10)
+                    {
+                        int maxAccessoryIndex = 5 + player.extraAccessorySlots;
+                        for (int i = 3; i < 3 + maxAccessoryIndex; i++)
+                        {
+                            if (slot != i && player.armor[i].type == ModContent.ItemType<CrescentBand>())
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                }
+                return true;
+            }
+        }*/
     }
 }

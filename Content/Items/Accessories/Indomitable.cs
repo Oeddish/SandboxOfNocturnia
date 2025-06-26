@@ -46,6 +46,22 @@ namespace FragmentsOfNocturnia.Content.Items.Accessories
             player.buffImmune[BuffID.Chilled] = true;
             player.buffImmune[BuffID.Stoned] = true;
         }
+
+        public override bool CanEquipAccessory(Player player, int slot, bool modded)
+        {
+            if (slot < 10)
+            {
+                int maxAccessoryIndex = 5 + player.extraAccessorySlots;
+                for (int i = 3; i < 3 + maxAccessoryIndex; i++)
+                {
+                    if (slot != i && player.armor[i].type == ItemID.EoCShield || slot != i && player.armor[i].type == ItemID.AnkhShield)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
@@ -54,6 +70,48 @@ namespace FragmentsOfNocturnia.Content.Items.Accessories
             recipe.AddIngredient(ModContent.ItemType<NightmareSteelBar>(), 10);
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.Register();
+        }
+        public class EoCShield : GlobalItem
+        {
+            public override bool CanEquipAccessory(Item item, Player player, int slot, bool modded)
+            {
+                if (item.type == ItemID.AnkhShield)
+                {
+                    if (slot < 10)
+                    {
+                        int maxAccessoryIndex = 5 + player.extraAccessorySlots;
+                        for (int i = 3; i < 3 + maxAccessoryIndex; i++)
+                        {
+                            if (slot != i && player.armor[i].type == ModContent.ItemType<CrescentBand>())
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                }
+                return true;
+            }
+        }
+        public class AnkhShield : GlobalItem
+        {
+            public override bool CanEquipAccessory(Item item, Player player, int slot, bool modded)
+            {
+                if (item.type == ItemID.AnkhShield)
+                {
+                    if (slot < 10)
+                    {
+                        int maxAccessoryIndex = 5 + player.extraAccessorySlots;
+                        for (int i = 3; i < 3 + maxAccessoryIndex; i++)
+                        {
+                            if (slot != i && player.armor[i].type == ModContent.ItemType<CrescentBand>())
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                }
+                return true;
+            }
         }
     }
 }

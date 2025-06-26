@@ -27,6 +27,21 @@ namespace FragmentsOfNocturnia.Content.Items.Accessories.Mage
             modPlayer.applyReverberation = true;
             player.GetDamage<MagicDamageClass>() += 0.25f;
         }
+        public override bool CanEquipAccessory(Player player, int slot, bool modded)
+        {
+            if (slot < 10)
+            {
+                int maxAccessoryIndex = 5 + player.extraAccessorySlots;
+                for (int i = 3; i < 3 + maxAccessoryIndex; i++)
+                {
+                    if (slot != i && player.armor[i].type == ModContent.ItemType<HolyScripture>() || slot != i && player.armor[i].type == ModContent.ItemType<ReverberationStone>() || slot != i && player.armor[i].type == ModContent.ItemType<Necronomicon>() || slot != i && player.armor[i].type == ModContent.ItemType<TomeOfMalice>())
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();

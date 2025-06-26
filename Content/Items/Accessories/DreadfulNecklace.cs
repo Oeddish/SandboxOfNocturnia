@@ -25,6 +25,21 @@ namespace FragmentsOfNocturnia.Content.Items.Accessories
             player.maxMinions += 1;
             player.GetDamage<SummonDamageClass>() += 0.08f;
         }
+        public override bool CanEquipAccessory(Player player, int slot, bool modded)
+        {
+            if (slot < 10)
+            {
+                int maxAccessoryIndex = 5 + player.extraAccessorySlots;
+                for (int i = 3; i < 3 + maxAccessoryIndex; i++)
+                {
+                    if (slot != i && player.armor[i].type == ItemID.PygmyNecklace)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();

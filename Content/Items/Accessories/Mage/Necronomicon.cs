@@ -18,7 +18,7 @@ namespace FragmentsOfNocturnia.Content.Items.Accessories.Mage
             Item.height = 32;
             Item.accessory = true;
             Item.value = Item.sellPrice(0, 4);
-            Item.rare = ItemRarityID.Lime;
+            Item.rare = ItemRarityID.Red;
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
@@ -27,6 +27,21 @@ namespace FragmentsOfNocturnia.Content.Items.Accessories.Mage
             modPlayer.applyWraithed = true;
             player.GetDamage<MagicDamageClass>() += 0.22f;
             player.GetCritChance<MagicDamageClass>() += 0.12f;
+        }
+        public override bool CanEquipAccessory(Player player, int slot, bool modded)
+        {
+            if (slot < 10)
+            {
+                int maxAccessoryIndex = 5 + player.extraAccessorySlots;
+                for (int i = 3; i < 3 + maxAccessoryIndex; i++)
+                {
+                    if (slot != i && player.armor[i].type == ModContent.ItemType<HolyScripture>() || slot != i && player.armor[i].type == ModContent.ItemType<ReverberationStone>() || slot != i && player.armor[i].type == ModContent.ItemType<TomeOfProvidence>() || slot != i && player.armor[i].type == ModContent.ItemType<CursedPearl>() || slot != i && player.armor[i].type == ModContent.ItemType<TomeOfMalice>() || slot != i && player.armor[i].type == ModContent.ItemType<EyeOfNewt>())
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
         public override void AddRecipes()
         {

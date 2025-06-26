@@ -66,19 +66,25 @@ namespace FragmentsOfNocturnia.Content.Items.Weapons.Melee
             {
                 SoundEngine.PlaySound(Item.UseSound.Value, player.Center);
             }
-            if(player.altFunctionUse == 2 || Main.mouseRight)
+            if(player.altFunctionUse == 2 && Main.mouseRight && cooldown <= 0)
             {
-                vechtorAttack = true;
+                vechtorAttack = true; // This is here so that the game waits a frame until it uses the jump, making it so that clicking in the opposite direction you're standing launches you correctly
             }
 
             return null;
         }
         public override void HoldItem(Player player)
         {
-            var modPlayer = Main.LocalPlayer.GetModPlayer<NocturnePlayer>();
-            if (vechtorAttack && cooldown <= 0)
+            if (cooldown >= 0) { cooldown--; }
+            if (cooldown == 1)
             {
-                if(player.direction == 1)
+                {
+                    SoundEngine.PlaySound(SoundID.Item35, player.Center);
+                }
+            }
+            if (vechtorAttack)
+            {
+                if (player.direction == 1)
                 {
                     player.velocity += new Vector2(10f, -15f);
                     for (int i = 0; i < 50; i++) { Dust.NewDust(player.position, Main.rand.Next(1, 5), Main.rand.Next(1, 5), DustID.PurpleTorch, player.velocity.X, player.velocity.Y); }
@@ -89,14 +95,7 @@ namespace FragmentsOfNocturnia.Content.Items.Weapons.Melee
                     for (int i = 0; i < 50; i++) { Dust.NewDust(player.position, Main.rand.Next(1, 5), Main.rand.Next(1, 5), DustID.PurpleTorch, player.velocity.X, player.velocity.Y); }
                 }
                 cooldown = 300;
-            }
-            vechtorAttack = false;
-            if (cooldown >= 0) { cooldown--; }
-            if (cooldown == 1)
-            {
-                {
-                    SoundEngine.PlaySound(SoundID.Item35, player.Center);
-                }
+                vechtorAttack = false;
             }
             base.HoldItem(player);
         }

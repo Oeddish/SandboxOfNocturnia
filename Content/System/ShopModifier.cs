@@ -24,7 +24,7 @@ namespace FragmentsOfNocturnia.Content.System
 
             if (type == NPCID.Clothier)
             {
-                if (!Main.dayTime && Main.moonPhase == 0) { shop.Add(ModContent.ItemType<UmbralThread>()); }
+                if (!Main.dayTime) { shop.Add(ModContent.ItemType<UmbralThread>()); }
             }
 
             if (type == NPCID.Dryad)

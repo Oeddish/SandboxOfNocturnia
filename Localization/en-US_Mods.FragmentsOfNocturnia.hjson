@@ -382,6 +382,22 @@ Items: {
 		DisplayName: Employee Bat
 	}
 
+	KokoVanityBreastplate: {
+		DisplayName: Koko Vanity Breastplate
+		Tooltip: ""
+	}
+
+	KokoVanityHead: {
+		DisplayName: Koko Vanity Head
+		Tooltip: ""
+	}
+
+	KokoVanityLegs: {
+		DisplayName: Koko Vanity Legs
+		Tooltip: ""
+	}
+}
+
 	Cartridge_Potion: {
 		DisplayName: Cartridge Potion
 		Tooltip: 30% chance to not consume ammo
