@@ -30,7 +30,7 @@ namespace FragmentsOfNocturnia.Content.Items.Weapons.Mage
             Item.damage = 30;
             Item.knockBack = 6;
             Item.crit = 4;
-            Item.mana = 45;
+            Item.mana = 25;
 
             Item.value = Item.sellPrice(gold: 12);
             Item.rare = ItemRarityID.Yellow;

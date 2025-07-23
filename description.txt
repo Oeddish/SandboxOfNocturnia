@@ -1,4 +1,4 @@
-v0.2.9
+v0.3.0.1
 
 A fan-made, fun little mod created based of off the VTuber KokoKurumi.
 
@@ -13,8 +13,8 @@ Actively in development.
 Credits -
 Kraken_21 - Main programing
 Herratic - Main spritework
+Sokido - Main spritework
 
-Sokido - spritework
 CreamyAyo - spritework
 
 Contributors:

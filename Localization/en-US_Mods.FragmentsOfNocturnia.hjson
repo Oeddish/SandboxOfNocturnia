@@ -3,7 +3,7 @@
 Items: {
 	NocturneKnocker: {
 		DisplayName: Nocturne Knocker
-		Tooltip: "'These bat's protect it's the charged core. Sometimes they fly off when it hits something'"
+		Tooltip: "'These bats protect its the charged core; Sometimes they fly off when it strikes enemies'"
 	}
 
 	NightmareSteelBar: {
@@ -13,7 +13,7 @@ Items: {
 
 	BatBasher: {
 		DisplayName: Bat Basher
-		Tooltip: "'A heavy mace that crushes enemies under the weight of eternal night'"
+		Tooltip: "'A heavy mace that crushes its enemies under the weight of eternal night'"
 	}
 
 	BatEssence: {
@@ -23,17 +23,17 @@ Items: {
 
 	Bratarang: {
 		DisplayName: Bratarang
-		Tooltip: "'It's frozen by the fear of being thrown'"
+		Tooltip: "'Frozen in fear at the thought of being thrown'"
 	}
 
 	NocturniumBar: {
 		DisplayName: Nocturnium Bar
-		Tooltip: "'To recreate a royals metal is a feat for sure'"
+		Tooltip: "'To recreate a royal`s metal is a feat for sure'"
 	}
 
 	PottedFlower: {
 		DisplayName: Potted Flower
-		Tooltip: "'With her flower safe there is no need for violence'"
+		Tooltip: "'With her flower safe, there is no need for violence'"
 	}
 
 	NightmareSteelThrone: {
@@ -112,7 +112,11 @@ Items: {
 
 	DrainingBand: {
 		DisplayName: Draining Band
-		Tooltip: "'Would you press the button?: You get more life regen but you get magic arrhythmia'"
+		Tooltip:
+			'''
+			Quicker life regeneration but slower mana regeneration
+			'Would you press the button?: You get more life regen but you get magic arrhythmia'
+			'''
 	}
 
 	StrangeConjunction: {
@@ -126,7 +130,7 @@ Items: {
 	}
 
 	KokoSlime: {
-		DisplayName: Slimy Cupon
+		DisplayName: Slimy Coupon
 		Tooltip: Redeem your points for this glorious thing
 	}
 
@@ -136,7 +140,7 @@ Items: {
 			'''
 			5 summon tag damage 
 			Your summons will focus struck enemies
-			Applies the 'broken armor' debuff
+			Applies the broken armor debuff
 			'''
 	}
 
@@ -175,7 +179,7 @@ Items: {
 		Tooltip:
 			'''
 			5 defense when wielded
-			'Fun fact: the proper name is saber but it doesn't sound as cool'
+			'Fun fact: The proper name is saber but it doesn't sound as cool'
 			'''
 	}
 
@@ -261,12 +265,12 @@ Items: {
 
 	StaffOfCruelty: {
 		DisplayName: Staff Of Cruelty
-		Tooltip: May inflict a random debuff on hit
+		Tooltip: Inflicts a random debuff on hit
 	}
 
 	StaffOfFoulness: {
 		DisplayName: Staff Of Foulness
-		Tooltip: May inflict a random debuff on hit
+		Tooltip: Inflicts a random debuff on hit
 	}
 
 	DreadfulNecklace: {
@@ -330,6 +334,7 @@ Items: {
 			'''
 			5% increased magic damage
 			Magic weapons apply the reverberation debuff
+			Reverberation - damage is periodically dealt to the enemy
 			'''
 	}
 
@@ -350,6 +355,7 @@ Items: {
 			12% increased magic critical strike chance
 			Magic weapons apply the reverberation debuff
 			Magic weapons apply the wraithed debuff
+			Wraithed - after killing an enemy, summons a friendly wraith
 			'''
 	}
 
@@ -373,8 +379,12 @@ Items: {
 	}
 
 	MoonBat: {
-		Tooltip: ""
-		DisplayName: Moon Bat
+		Tooltip:
+			'''
+			'A rude bat for a rude batter'
+			Right click to throw a pitch
+			'''
+		DisplayName: Rude Slugger
 	}
 
 	MetalBat: {
@@ -383,20 +393,19 @@ Items: {
 	}
 
 	KokoVanityBreastplate: {
-		DisplayName: Koko Vanity Breastplate
-		Tooltip: ""
+		DisplayName: Koko Body
+		Tooltip: Make your body look like a princess!
 	}
 
 	KokoVanityHead: {
-		DisplayName: Koko Vanity Head
-		Tooltip: ""
+		DisplayName: Koko Head
+		Tooltip: Make your head look like a princess!
 	}
 
 	KokoVanityLegs: {
-		DisplayName: Koko Vanity Legs
-		Tooltip: ""
+		DisplayName: Koko Legs
+		Tooltip: Make your legs look like a princess!
 	}
-}
 
 	Cartridge_Potion: {
 		DisplayName: Cartridge Potion
@@ -410,17 +419,22 @@ Items: {
 
 	Absorption_Potion: {
 		DisplayName: Absorption Potion
-		Tooltip: Vastly increases the pickup range for hearts
+		Tooltip: Vastly increase the pickup range for life hearts
 	}
 
 	KikiSummonItem: {
 		DisplayName: Emergency Remote
-		Tooltip: "'Summons twin AI's to fight, one shoots a lazer and the other a bomb'"
+		Tooltip:
+			'''
+			Summons two AI bots to fight for you
+			The first bot shoots a fast firing laser
+			The second bot fires a slow moving bomb with tracking
+			'''
 	}
 
 	RoyalFlush: {
 		DisplayName: Royal Flush
-		Tooltip: Increases critical chance for guns by 10%
+		Tooltip: Increases critical strike chance of guns by 10%
 	}
 
 	DaiyaRevolver: {
@@ -472,6 +486,11 @@ Projectiles: {
 	DiaemusSpikeProjectile.DisplayName: Diaemus Spike Projectile
 	DiphyllaProjectile.DisplayName: Diphylla Projectile
 	WraithedProjectile.DisplayName: Wraithed Projectile
+	Hotties.DisplayName: Hotties
+	BunLazer.DisplayName: Bun Lazer
+	DroneBomb.DisplayName: Drone Bomb
+	KikiBunProj.DisplayName: Kiki Bun Proj
+	KikiDroidProj.DisplayName: Kiki Droid Proj
 }
 
 Buffs: {

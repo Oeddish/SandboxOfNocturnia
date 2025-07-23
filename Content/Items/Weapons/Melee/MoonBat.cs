@@ -3,6 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using FragmentsOfNocturnia.Content.Projectiles.Melee;
+using FragmentsOfNocturnia.Content.Items.Weapons.Ranged;
 
 namespace FragmentsOfNocturnia.Content.Items.Weapons.Melee
 {
@@ -130,6 +131,16 @@ namespace FragmentsOfNocturnia.Content.Items.Weapons.Melee
 			}
 
 			//base.UseItemHitbox(player, ref hitbox, ref noHitbox);
+
         }
-	}
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient<MetalBat>();
+            recipe.AddIngredient(ItemID.Silk);
+            recipe.AddIngredient(ItemID.Ectoplasm, 5);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
+        }
+    }
 }
