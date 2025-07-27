@@ -38,7 +38,6 @@ namespace FragmentsOfNocturnia.Content.Items.Weapons.Melee
         }
         public override void HoldItem(Player player)
         {
-            player.AddBuff(BuffID.Hunter, 5, true);
             player.statDefense += 5;
             base.HoldItem(player);
         }

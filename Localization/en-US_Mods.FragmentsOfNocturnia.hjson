@@ -451,6 +451,87 @@ Items: {
 			Literally pay to win
 			'''
 	}
+
+	KikiVanityBreastplate: {
+		DisplayName: Kiki Vanity Breastplate
+		Tooltip: ""
+	}
+
+	KikiVanityHead: {
+		DisplayName: Kiki Vanity Head
+		Tooltip: ""
+	}
+
+	KikiVanityLegs: {
+		DisplayName: Kiki Vanity Legs
+		Tooltip: ""
+	}
+
+	BossymoonVanityBreastplate: {
+		DisplayName: Bossymoon Vanity Breastplate
+		Tooltip: ""
+	}
+
+	BossymoonVanityHead: {
+		DisplayName: Bossymoon Vanity Head
+		Tooltip: ""
+	}
+
+	BossymoonVanityLegs: {
+		DisplayName: Bossymoon Vanity Legs
+		Tooltip: ""
+	}
+
+	FlippedOffMask: {
+		DisplayName: Flipped Off Mask
+		Tooltip:
+			'''
+			Increases melee damage by 10%
+			Increases melee attack speed by 10%
+			'''
+	}
+
+	FlippedOffBreastplate: {
+		DisplayName: Flipped Off Breastplate
+		Tooltip: Increases damage by 8%
+	}
+
+	FlippedOffLegs: {
+		DisplayName: Flipped Off Legs
+		Tooltip:
+			'''
+			Increases movement speed by 8%
+			Increases damage by 8%
+			'''
+	}
+
+	FlippedOffHeadgear: {
+		DisplayName: Flipped Off Headgear
+		Tooltip:
+			'''
+			Increases magic damage by 14%
+			Increases magic crit chance by 14%
+			Increases maximum mana by 120
+			'''
+	}
+
+	FlippedOffHelm: {
+		DisplayName: Flipped Off Helm
+		Tooltip:
+			'''
+			Increases ranged damage by 17%
+			Increases ranged crit chance by 10%
+			'''
+	}
+
+	FlippedOffHood: {
+		DisplayName: Flipped Off Hood
+		Tooltip:
+			'''
+			Increases summon damage by 14%
+			Increases maximum minion slots by 2
+			'''
+	}
 }
 
 Projectiles: {
