@@ -15,7 +15,7 @@ internal class NightmareSteelThrone : ModItem
 {
     public override void SetDefaults()
     {
-        Item.DefaultToPlaceableTile(ModContent.TileType<NightmareSteelThroneTile>());
+        Item.DefaultToPlaceableTile(ModContent.TileType<NightmareChestTile>());
         Item.width = 21;
         Item.height = 27;
         Item.value = Item.sellPrice(0, 15, 40);
