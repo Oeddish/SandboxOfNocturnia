@@ -19,7 +19,7 @@ public class BatSparkleGlobalNPC : GlobalNPC
         // Spawn sparkle dust around the bat
         if (Main.rand.NextBool(3)) // 1 in 3 chance per tick
         {
-            Dust.NewDust(npc.position, npc.width, npc.height, DustID.GemAmethyst, 0f, 0f, 150, Color.White, 1.2f);
+            Dust.NewDust(npc.position, npc.width, npc.height, DustID.PurpleTorch, 0f, 0f, 150, Color.White, 1.2f);
         }
     }
 

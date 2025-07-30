@@ -7,7 +7,7 @@ using Terraria.ID;
 
 namespace FragmentsOfNocturnia.Content.System
 {
-    internal class NpcType
+    public class NpcType
     {
         public static bool IsBat(int npcType)
         {

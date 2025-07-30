@@ -7,6 +7,7 @@ using Terraria.GameContent.ItemDropRules;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using FragmentsOfNocturnia.Content.System;
 
 namespace FragmentsOfNocturnia.Content.Systems
 {
@@ -15,7 +16,7 @@ namespace FragmentsOfNocturnia.Content.Systems
 
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
         {
-            if (npc.type == NPCID.CaveBat || npc.type == NPCID.GiantBat || npc.type == NPCID.IceBat || npc.type == NPCID.IlluminantBat || npc.type == NPCID.JungleBat || npc.type == NPCID.SporeBat)
+            if (NpcType.IsBat(npc.type))
             {
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Items.Items.BatEssence>(), 3));
             }
