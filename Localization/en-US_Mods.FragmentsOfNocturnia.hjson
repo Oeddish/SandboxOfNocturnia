@@ -644,3 +644,4 @@ Buffs: {
 
 # Flat keys are required for map entries
 Tiles.NightmareChestTile.MapEntry: Nightmare Chest!
+NPCs.FriendlyBatEffect.DisplayName: Friendly Bat Effect

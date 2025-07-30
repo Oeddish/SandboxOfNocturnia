@@ -1,4 +1,5 @@
 ﻿using FragmentsOfNocturnia.Content.Dusts;
+using FragmentsOfNocturnia.Content.NPCs;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
@@ -9,6 +10,7 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using static FragmentsOfNocturnia.FragmentsOfNocturnia;
 
 namespace FragmentsOfNocturnia.Content.Tiles.Furniture;
 
@@ -131,6 +133,19 @@ public class NightmareChestTile : ModTile
         Chest.DestroyChest(i, j);
     }
 
+    // Sends message to spawn dust for FriendlyBatEffect when the chest is opened
+    private static void SendBatMessage(int left, int top, int count, int time)
+    {
+        ModPacket packet = ModContent.GetInstance<FragmentsOfNocturnia>().GetPacket();
+        packet.Write((byte) MessageType.SpawnBats);
+        packet.Write(left);
+        packet.Write(top);
+        packet.Write(count);
+        packet.Write(time);
+        FragmentsOfNocturnia.Instance.Logger.Info($"NightmareChestTile Sending bat packet: Left={left}, Top={top}, Count={count}, Time={time}");
+        packet.Send();
+    }
+
     public override bool RightClick(int i, int j)
     {
         Player player = Main.LocalPlayer;
@@ -176,7 +191,10 @@ public class NightmareChestTile : ModTile
             else
             {
                 NetMessage.SendData(MessageID.RequestChestOpen, number: left, number2: top);
+                // Send message to server to spawn bat effect
+                SendBatMessage(left, top, 3, 60);
                 Main.stackSplit = 600;
+                // Spawning bats here would be incorrect, as it would only spawn them for the local player.
                 // Play the open sound immediately for the local player
                 SoundEngine.PlaySound(SoundOpen);
             }
@@ -194,6 +212,8 @@ public class NightmareChestTile : ModTile
                 }
                 else
                 {
+                    // Spawn bats flying out of the chest (server side)
+                    FriendlyBatEffect.SpawnFriendlyBats(new Vector2((left + 1) * 16, top * 16), 3, 60, true);
                     SoundEngine.PlaySound(SoundOpen);
                     player.OpenChest(left, top, chest);
                 }
