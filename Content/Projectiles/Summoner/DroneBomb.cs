@@ -7,6 +7,7 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.NPC;
 
 namespace FragmentsOfNocturnia.Content.Projectiles.Summoner
 {
@@ -77,19 +78,50 @@ namespace FragmentsOfNocturnia.Content.Projectiles.Summoner
 
         public override void OnKill(int timeLeft)
         {
-            //SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
+            const float radius = 48f * 2f; // explosion radius in pixels (adjust as needed)
+            Vector2 center = Projectile.Center;
 
-            int grenade = Projectile.NewProjectile(
-                Projectile.GetSource_Death(),
-                Projectile.Center,
-                Vector2.Zero,
-                ProjectileID.Grenade, // or Explosion type from vanilla
-                30,
-                Projectile.knockBack,
-                Projectile.owner
-            );
-            Main.projectile[grenade].timeLeft = 0;
-            Main.projectile[grenade].netUpdate = true;
+            // Choose explosion damage: use Projectile.damage if it's set sensibly,
+            // otherwise fall back to vanilla grenade value (30).
+            int explosionDamage = Projectile.damage > 1 ? Projectile.damage : 30;
+
+            // Server-side: apply damage to NPCs only
+            if (Main.netMode != NetmodeID.MultiplayerClient)
+            {
+                for (int i = 0; i < Main.maxNPCs; i++)
+                {
+                    NPC npc = Main.npc[i];
+                    if (npc == null || !npc.active || npc.friendly || npc.life <= 0)
+                        continue;
+
+                    // skip town NPCs and immortal or non-damageable NPCs
+                    if (npc.townNPC || npc.lifeMax <= 5)
+                        continue;
+
+                    float dist = Vector2.Distance(npc.Center, center);
+                    if (dist <= radius)
+                    {
+                        HitInfo hitInfo = new HitInfo();
+                        hitInfo.Knockback = Projectile.knockBack;
+                        hitInfo.Damage = explosionDamage;
+                        hitInfo.Crit = false;
+
+                        int direction = npc.position.X + (npc.width / 2) < center.X ? 1 : -1;
+                        // Apply damage and knockback; this runs on server so it will sync to clients
+                        npc.StrikeNPC(hitInfo);
+                        npc.netUpdate = true;
+                    }
+                }
+            }
+
+            // Visuals & sound for everyone
+            Terraria.Audio.SoundEngine.PlaySound(SoundID.Item14, center);
+            const int dustCount = 30;
+            for (int i = 0; i < dustCount; i++)
+            {
+                Vector2 vel = new Vector2(Main.rand.NextFloat(-6f, 6f), Main.rand.NextFloat(-6f, 6f));
+                Dust.NewDustDirect(center - new Vector2(8, 8), 16, 16, DustID.Smoke, vel.X, vel.Y, 100, default, 2f).noGravity = true;
+            }
         }
     }
 }

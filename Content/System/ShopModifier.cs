@@ -30,6 +30,11 @@ namespace FragmentsOfNocturnia.Content.System
             if (type == NPCID.Dryad)
             {
                 if (NPC.downedGoblins && Main.expertMode && !Main.dayTime) { shop.Add(ModContent.ItemType<NocturneBerry>()); }
+
+                // Add worms and basic bait to Dryad's shop at all times
+                // My Dryad is fishy!
+                shop.Add(ItemID.Worm);
+                shop.Add(ItemID.ApprenticeBait);
             }
         }
     }

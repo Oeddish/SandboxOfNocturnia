@@ -41,6 +41,20 @@ Items: {
 		Tooltip: ""
 	}
 
+	NightmareChest: {
+		MapEntry: Nightmare Chest Map Entry
+		MapEntry0: Nightmare Chest Map Entry
+		DisplayName: Nightmare Chest
+		Tooltip: A chest to store your nightmares!
+	}
+
+	NightmareChestTile: {
+		MapEntry: Nightmare Chest Tile Map Entry
+		MapEntry0: Nightmare Chest Tile Map Entry 0
+		DisplayName: Nightmare Chest
+		Tooltip: A chest to store your nightmares!
+	}
+
 	AbyssalResonator: {
 		DisplayName: Abyssal Resonator
 		Tooltip: "'Crystalizes and breaks echo' - for now uses gel as ammo, srry."
@@ -619,4 +633,15 @@ Buffs: {
 		DisplayName: Kiki Bots
 		Description: Summons twin bots to shoot at your foes
 	}
+
+	Tiles: {
+		NightmareChestTile: {
+			DisplayName: Nightmare Chest
+			Tooltip: A chest to store your nightmares!
+		}
+	}
 }
+
+# Flat keys are required for map entries
+Tiles.NightmareChestTile.MapEntry: Nightmare Chest!
+NPCs.FriendlyBatEffect.DisplayName: Friendly Bat Effect
