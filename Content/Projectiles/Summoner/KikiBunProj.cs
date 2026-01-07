@@ -1,5 +1,6 @@
 using FragmentsOfNocturnia.Content.Buffs;
 using FragmentsOfNocturnia.Content.Players;
+using Microsoft.CodeAnalysis.Host;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
@@ -12,7 +13,9 @@ namespace FragmentsOfNocturnia.Content.Projectiles.Summoner
 	public class KikiBunProj : ModProjectile
 	{
 		int atkSpd;
-		public override void SetStaticDefaults()
+        private readonly float LASER_DAMAGE_MULT = 1.2f;
+
+        public override void SetStaticDefaults()
 		{
 			// Sets the amount of frames this minion has on its spritesheet
 			//Main.projFrames[Projectile.type] = 4;
@@ -231,7 +234,7 @@ namespace FragmentsOfNocturnia.Content.Projectiles.Summoner
 						Projectile.Center,
 						direction * 20f,
 						ModContent.ProjectileType<BunLazer>(),
-						8,
+                        (int) (Projectile.damage * LASER_DAMAGE_MULT),
 						Projectile.knockBack*0.5f,
 						Projectile.owner
 						);
