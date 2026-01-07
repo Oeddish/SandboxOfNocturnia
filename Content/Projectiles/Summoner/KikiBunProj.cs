@@ -13,7 +13,7 @@ namespace FragmentsOfNocturnia.Content.Projectiles.Summoner
 	public class KikiBunProj : ModProjectile
 	{
 		int atkSpd;
-        private readonly float LASER_DAMAGE_MULT = 1.25f;
+        private readonly float LASER_DAMAGE_MULT = 1.2f;
 
         public override void SetStaticDefaults()
 		{
