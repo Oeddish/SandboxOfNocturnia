@@ -546,6 +546,16 @@ Items: {
 			Increases maximum minion slots by 2
 			'''
 	}
+
+	NightmareDiggingClaws: {
+		DisplayName: Nightmare Digging Claws
+		Tooltip: "Claws will not work after hard mode"
+	}
+
+	NightmareBomb: {
+		DisplayName: Nightmare Bomb
+		Tooltip: "Do not delve too deeply!"
+	}
 }
 
 Projectiles: {
@@ -586,6 +596,7 @@ Projectiles: {
 	DroneBomb.DisplayName: Drone Bomb
 	KikiBunProj.DisplayName: Kiki Bun Proj
 	KikiDroidProj.DisplayName: Kiki Droid Proj
+	NightmareBombProjectile.DisplayName: Nightmare Bomb Projectile
 }
 
 Buffs: {
