@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace FragmentsOfNocturnia.Content.System
 {
-    public class ExtendoGripRecipe : ModSystem
+    public class CheatRecipes : ModSystem
     {
         public override void AddRecipes()
         {
@@ -45,12 +45,12 @@ namespace FragmentsOfNocturnia.Content.System
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
 
-            recipe = Recipe.Create(ItemID.BloodySpine, 9999);
+            recipe = Recipe.Create(ItemID.BloodySpine, 1);
             recipe.AddIngredient(ItemID.DirtBlock, 1);
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
 
-            recipe = Recipe.Create(ItemID.SlimeCrown , 9999);
+            recipe = Recipe.Create(ItemID.SlimeCrown , 1);
             recipe.AddIngredient(ItemID.DirtBlock, 1);
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
