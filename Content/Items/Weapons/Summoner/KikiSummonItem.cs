@@ -24,7 +24,7 @@ namespace FragmentsOfNocturnia.Content.Items.Weapons.Summoner
         {
             Item.damage = 16;
             Item.knockBack = 3f;
-            Item.mana = 10; // mana cost
+            Item.mana = 20; // mana cost
             Item.width = 15;
             Item.height = 20;
             Item.useTime = 36;
