@@ -8,7 +8,7 @@ namespace FragmentsOfNocturnia.Content.Items.Weapons.Thrown
     public class NightmareBomb : ModItem
     {
         public override string Texture => "Terraria/Images/Item_" + ItemID.ScarabBomb;
-        private static readonly int COUNT_RECIPE_RESULTS = 24;
+        private static readonly int COUNT_RECIPE_RESULTS = 1;
 
         public override void SetDefaults()
         {
@@ -20,7 +20,7 @@ namespace FragmentsOfNocturnia.Content.Items.Weapons.Thrown
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe(COUNT_RECIPE_RESULTS);
-            recipe.AddIngredient(ItemID.Bomb, 1); // Base bomb
+            recipe.AddIngredient(ItemID.Bomb, 4); // Base bomb
             recipe.AddIngredient(ModContent.ItemType<BatEssence>(), 1);
             recipe.AddTile(TileID.Anvils); // Crafting station
             recipe.Register();
