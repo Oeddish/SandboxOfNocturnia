@@ -10,8 +10,6 @@ namespace FragmentsOfNocturnia.Content.System
 {
     public class ItemLimitUISystem : ModSystem
     {
-        private bool lastVisible = false;
-        
         public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
         {
             const string layerName = "FragmentsOfNocturnia: Item Limit HUD";
@@ -38,14 +36,7 @@ namespace FragmentsOfNocturnia.Content.System
             Player player = Main.LocalPlayer;
             var modPlayer = player.GetModPlayer<ItemLimitPlayer>();
 
-            bool visible = modPlayer.showItemLimitHud;
-            if (lastVisible != visible)
-            {
-                Main.NewText("HUD visibility change: " + visible);
-                lastVisible = visible;
-            }
-
-            if (!visible)
+            if (!modPlayer.showItemLimitHud)
             {
                 return true;
             }
@@ -61,7 +52,7 @@ namespace FragmentsOfNocturnia.Content.System
 
             // Measure the text using the same font as other HUD strings and place it on the right side.
             Vector2 textSize = FontAssets.MouseText.Value.MeasureString(text) * scale;
-            Vector2 position = new Vector2(Main.screenWidth - textSize.X - 16f, 16f);
+            Vector2 position = new Vector2((Main.screenWidth - (Main.screenWidth / 6)) - textSize.X - 16f, 16f);
 
             // Draw with border for readability (same style as other UI lines)
             Utils.DrawBorderString(Main.spriteBatch, text, position, color, scale);
@@ -73,11 +64,11 @@ namespace FragmentsOfNocturnia.Content.System
                 float pulse = 0.6f + (0.4f * (float)global::System.Math.Sin(Main.GlobalTimeWrappedHourly * 6f));
                 pulse *= effectMultiplier;
 
-                // Lighting.AddLight(player.Center, 0.6f * pulse, 0.05f * pulse, 0.05f * pulse);
+                // Mostly red light
                 Vector3 rgb = new(0.6f * pulse, 0.05f * pulse, 0.05f * pulse);
 
                 // Add a subtle light/gloom to make it feel "alerty"
-                FragmentsOfNocturnia.Instance.Logger.Info("Player light: pulse = " + pulse + ", rgb = " + rgb);
+                // FragmentsOfNocturnia.Instance.Logger.Debug("Player light: pulse = " + pulse + ", rgb = " + rgb);
                 Lighting.AddLight(player.Center, rgb);
             }
 
