@@ -1,9 +1,11 @@
 using System;
 using System.Reflection;
+using System.Linq;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.GameInput;
 
 namespace FragmentsOfNocturnia.Content.System
 {
@@ -19,10 +21,39 @@ namespace FragmentsOfNocturnia.Content.System
 
         private int _prevScroll;
 
+        // Cached reflection targets
+        private FieldInfo? _zoomField;
+        private FieldInfo[] _playerInputScrollFields = Array.Empty<FieldInfo>();
+        private FieldInfo[] _mainScrollFields = Array.Empty<FieldInfo>();
+
         public override void Load()
         {
             // Initialize prev scroll to current hardware value
             _prevScroll = Mouse.GetState().ScrollWheelValue;
+
+            // Cache zoom field once
+            string[] candidates = { "GameZoomTarget", "gameZoomTarget", "_gameZoomTarget", "zoomTarget", "GameZoom", "gameZoom" };
+            foreach (var name in candidates)
+            {
+                var f = typeof(Main).GetField(name, BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
+                if (f != null && f.FieldType == typeof(float))
+                {
+                    _zoomField = f;
+                    break;
+                }
+            }
+
+            // Cache likely PlayerInput scroll/wheel integer fields (if present)
+            _playerInputScrollFields = typeof(PlayerInput)
+                .GetFields(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
+                .Where(f => f.FieldType == typeof(int) && (f.Name.IndexOf("scroll", StringComparison.OrdinalIgnoreCase) >= 0 || f.Name.IndexOf("wheel", StringComparison.OrdinalIgnoreCase) >= 0))
+                .ToArray();
+
+            // Cache likely Main scroll integer fields (some tML versions store wheel state here)
+            _mainScrollFields = typeof(Main)
+                .GetFields(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
+                .Where(f => f.FieldType == typeof(int) && (f.Name.IndexOf("scroll", StringComparison.OrdinalIgnoreCase) >= 0 || f.Name.IndexOf("wheel", StringComparison.OrdinalIgnoreCase) >= 0))
+                .ToArray();
         }
 
         public override void PostUpdateEverything()
@@ -53,40 +84,50 @@ namespace FragmentsOfNocturnia.Content.System
             float notches = delta / 120f;
             float change = notches * ZoomStep;
 
-            // Try to find a Main.* zoom target field via reflection to be resilient across versions
-            // Common names: GameZoomTarget, gameZoomTarget, _gameZoomTarget, zoomTarget
-            FieldInfo zoomField = null;
-            string[] candidates = { "GameZoomTarget", "gameZoomTarget", "_gameZoomTarget", "zoomTarget", "GameZoom", "gameZoom" };
-            foreach (var name in candidates)
+            if (_zoomField != null)
             {
-                zoomField = typeof(Main).GetField(name, BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
-                if (zoomField != null && zoomField.FieldType == typeof(float))
-                    break;
-                zoomField = null;
+                try
+                {
+                    float current = (float)_zoomField.GetValue(null)!;
+                    // Positive notches interpreted as wheel-up => zoom in (decrease value).
+                    float next = Math.Clamp(current - change, ZoomMin, ZoomMax);
+                    _zoomField.SetValue(null, next);
+                }
+                catch
+                {
+                    // If something goes wrong with reflection at runtime, silently ignore and bail out.
+                    _zoomField = null;
+                }
             }
 
-            if (zoomField != null)
-            {
-                float current = (float)zoomField.GetValue(null);
-                // Decide direction: positive wheel typically means up -> zoom in. 
-                // Here we interpret positive notches as zooming in (decrease value). Adjust sign if your game uses opposite convention.
-                float next = Math.Clamp(current - change, ZoomMin, ZoomMax);
-                zoomField.SetValue(null, next);
-            }
-            else
-            {
-                // Fallback: try a known property if reflection fails.
-                // If this runs in your tML version, replace with the exact public API field/property for zoom.
-                // As a last resort, do nothing to avoid runtime errors.
-            }
+            // Prevent vanilla hotbar/next/previous from seeing the same wheel delta
+            ConsumeVanillaWheel(curScroll);
 
             // Update baseline
             _prevScroll = curScroll;
         }
 
+        private void ConsumeVanillaWheel(int curScroll)
+        {
+            foreach (var f in _playerInputScrollFields)
+            {
+                try { f.SetValue(null, curScroll); }
+                catch { /* ignore individual failures */ }
+            }
+
+            foreach (var f in _mainScrollFields)
+            {
+                try { f.SetValue(null, curScroll); }
+                catch { /* ignore individual failures */ }
+            }
+        }
+
         public override void Unload()
         {
-            // Clear any static refs (none to clear here) and reset prev scroll
+            // Clear cached reflection info
+            _zoomField = null;
+            _playerInputScrollFields = Array.Empty<FieldInfo>();
+            _mainScrollFields = Array.Empty<FieldInfo>();
             _prevScroll = 0;
         }
     }
